@@ -1,6 +1,8 @@
 package model;
 
 //Type your code here
+
+//user class
 public class User
 {
 	public String name;
@@ -8,7 +10,7 @@ public class User
 	public int m;
 	
 	
-	
+	//method
 	public User(String name,String date,String month)
 	{
 		this.name=name;
