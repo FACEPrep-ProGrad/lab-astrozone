@@ -8,7 +8,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import model.User;
+import service.AstroCalculator;
 
 @WebServlet(urlPatterns = {"/entervalue"})
 public class AstroFormController extends HttpServlet {
@@ -23,7 +24,7 @@ public class AstroFormController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-/* Uncomment the below code to run your application
+/* Uncomment the below code to run your application*/
 		String name=request.getParameter("name");
 		String gender=request.getParameter("gender");
 		String date=request.getParameter("dob1");
@@ -36,7 +37,16 @@ public class AstroFormController extends HttpServlet {
 	// 3. ***Create an object for the AstroCalculator class.***
 	// 4. ***Call the findSign method and store the return value in a String variable called as astrosign***
 		
+		User  u=new User(name,date,month);
+		AstroCalculator ac=new AstroCalculator();
+		String astrosign=ac.findSign(u);
 		
+			System.out.println(astrosign);
+			if(astrosign.equals("Aquarius")){
+				RequestDispatcher rd=this.getServletContext().getRequestDispatcher("/WEB-INF/Outputview.jsp");
+				request.setAttribute("astro", "<img src='./assets/aquarius.svg'>");
+				rd.forward(request, response);
+			}
 	
 		
 		if(astrosign.equals("Aquarius")){
@@ -99,6 +109,6 @@ public class AstroFormController extends HttpServlet {
 			RequestDispatcher rd=this.getServletContext().getRequestDispatcher("/WEB-INF/Outputview.jsp");
 			request.setAttribute("astro", "<img src='./assets/virgo.svg'>");
 			rd.forward(request, response);
-		}*/
+		}
 	}
 }
