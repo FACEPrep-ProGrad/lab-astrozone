@@ -1,5 +1,4 @@
 package model;
-
 import java.time.LocalDate;
 
 public class User
@@ -8,7 +7,6 @@ public class User
 	private String email;
 	public LocalDate dob;
 	private String gender;
-
 	
 	public User(String name,String email,String dob,String gender)
 	{
@@ -18,9 +16,9 @@ public class User
 		this.gender=gender;
 	}
 	
-	public void getName()
+	public String getName()
 	{
-		System.out.println(name);
+		return name;
 	}
 
 	public void setName(String name)
@@ -28,9 +26,9 @@ public class User
 		this.name=name;
 	}
 	
-	public void getEmail()
+	public String getEmail()
 	{
-		System.out.println(email);
+		return email;
 	}
 	
 	public void setEmail(String email)
@@ -41,8 +39,8 @@ public class User
 	public void setgender(String gender) {
 		this.gender=gender;
 	}
-	public void getgender() {
-		System.out.println(gender);
+	public String getgender() {
+		return gender;
 	}
 	
 }
