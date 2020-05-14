@@ -32,9 +32,10 @@ public class AstroFormController extends HttpServlet {
 		String dob = date+"-"+month+"-"+year;	
 		
 		
-		User user=new User(name,gender,dob,gender);
+		User user=new User(name,date,month);
 		AstroCalculator obj2 = new AstroCalculator();
 		String astrosign= obj2.findSign(user);
+		System.out.println("hello:"+astrosign); 
 		
 		if(astrosign.equals("Aquarius")){
 			RequestDispatcher rd=this.getServletContext().getRequestDispatcher("/WEB-INF/Outputview.jsp");

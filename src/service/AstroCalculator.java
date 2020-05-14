@@ -1,101 +1,50 @@
 package service;
-import model.User;
-import java.time.*;
 
 public class AstroCalculator
 {
 	
-	
-	public String findSign(User us)
-	
+	public String findSign(model.User u)
 	{
-		Month mon=us.dob.getMonth();
-		int month=mon.getValue();
-		int dt=us.dob.getDayOfMonth();
-		String zodiac=" ";
+		int date=u.d;
+		int month=u.m;
 		
-		if (month == 1){ 
-            if (dt < 20) 
-         zodiac = "Capricorn"; 
-            else
-            zodiac = "aquarius"; 
-        } 
-              
-        else if (month == 2){ 
-            if (dt < 19) 
-            zodiac = "Aquarius"; 
-            else
-            zodiac = "pisces"; 
-        } 
-              
-        else if(month == 3){ 
-            if (dt < 21)  
-            zodiac = "Pisces"; 
-            else
-           zodiac = "aries"; 
-        } 
-        else if (month == 4){ 
-            if (dt < 20) 
-            zodiac = "Aries"; 
-            else
-            zodiac = "taurus"; 
-        } 
-              
-        else if (month == 5){ 
-            if (dt < 21) 
-            zodiac = "Taurus"; 
-            else
-            zodiac = "gemini"; 
-        } 
-              
-        else if( month == 6){ 
-            if (dt < 21) 
-            zodiac = "Gemini"; 
-            else
-            zodiac = "cancer"; 
-        } 
-              
-        else if (month == 7){ 
-            if (dt < 23) 
-            zodiac = "Cancer"; 
-            else
-            zodiac = "leo"; 
-        } 
-              
-        else if( month == 8){ 
-            if (dt < 23)  
-            zodiac = "Leo"; 
-            else
-           zodiac = "virgo"; 
-        } 
-              
-        else if (month == 9){ 
-            if (dt < 23) 
-            zodiac = "Virgo"; 
-            else
-           zodiac = "libra"; 
-        } 
-              
-        else if (month == 10){ 
-            if (dt < 23) 
-            zodiac = "Libra"; 
-            else
-          zodiac= "scorpio"; 
-        } 
-              
-        else if (month == 11){ 
-            if (dt < 22) 
-           zodiac = "scorpio"; 
-            else
-            zodiac = "sagittarius"; 
-        }
-        else  if (month == 12){ 
-            if (dt < 22) 
-            zodiac = "Sagittarius"; 
-            else
-            zodiac ="capricorn"; 
-        } 
-		return zodiac;
-		
+		if((date>21 && month == 12) ||  (date<=19 && month == 1)){
+			return "Capricon";
+		}
+		if((date>20 && month ==1) ||  (date<=18 && month == 2)){
+			return "Aquarius";
+		}
+		if((date>19 && month == 2) || (date <=20 && month == 3)){
+	           return "Pisces";
+	       }
+	       if ((date>21 && month == 3) || (date <=20 && month == 4)){
+	           return "aries";
+	       }
+	       if ((date>21 && month == 4) || (date <=20 && month == 5)){
+	           return "Taurus";
+	       }
+	       if ((date>21 && month == 5) || (date<=20 && month == 6)){
+	           return "Gemini";
+	       }
+	       if ((date>21 && month == 6) || (date<=20 && month == 7)){
+	           return "Cancer";
+	       }
+	       if ((date>21 && month  == 7) || (date<=20 && month== 8)){
+	           return "Leo";
+	       }
+	       if ((date>21 && month ==8) || (date<=22 && month == 9)){
+	           return "Virgo";
+	       }
+	       if ((date>23 && month == 9) || (date<=20 && month ==10)){
+	           return "Libra";
+	       }
+	       if ((date>21 && month == 10) || (date<=22 && month == 11)){
+	           return "Scorpio";
+	       }
+	       if ((date>23 && month == 11) || (date<=20 && month == 12)){
+	           return "Sagitarius";
+	       }
+	       else
+	    	   return "please enter all the values";		
 	}
 }

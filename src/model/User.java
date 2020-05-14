@@ -1,46 +1,18 @@
 package model;
-import java.time.LocalDate;
 
-public class User
-{
-	private String name;
-	private String email;
-	public LocalDate dob;
-	private String gender;
+public class User{
+	public String name;
+	public String email;
+	public String gender;
+	 public int d;
+	public int m;
 	
-	public User(String name,String email,String dob,String gender)
-	{
-		setName(name);
-		setEmail(email);
-		this.dob=LocalDate.parse(dob);
-		this.gender=gender;
-	}
 	
-	public String getName()
-	{
-		return name;
-	}
-
-	public void setName(String name)
+	
+	public User(String name,String date,String month)
 	{
 		this.name=name;
+		d=Integer.parseInt(date);
+		m=Integer.parseInt(month);
 	}
-	
-	public String getEmail()
-	{
-		return email;
-	}
-	
-	public void setEmail(String email)
-	{
-		this.email=email;
-	}
-	
-	public void setgender(String gender) {
-		this.gender=gender;
-	}
-	public String getgender() {
-		return gender;
-	}
-	
 }
