@@ -1,9 +1,7 @@
 package testing;
 
-/*Uncomment the below code to test
 import static org.junit.Assert.*;
 import org.junit.Test;
-
 import model.User;
 
 public class TestUser {
@@ -27,4 +25,3 @@ public class TestUser {
 		}
 	}
 }
-*/

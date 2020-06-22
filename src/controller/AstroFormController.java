@@ -9,25 +9,36 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.User;
+import service.AstroCalculator;
+
 
 @WebServlet(urlPatterns = {"/entervalue"})
 public class AstroFormController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+	
+	//Progression 3
+	
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		RequestDispatcher rd=this.getServletContext().getRequestDispatcher("/entervalues.jsp");
 		rd.forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-/* 
+
 		String name=request.getParameter("name");
 		String gender=request.getParameter("gender");
 		String date=request.getParameter("dob1");
 		String month=request.getParameter("dob2");
 		String year=request.getParameter("dob3");
 		String dob = date+"-"+month+"-"+year;	
-		
+		User user = new User(name, gender, dob);
+		AstroCalculator  a = new AstroCalculator();
+		user.setName(name);
+		user.setDob(dob);
+		user.setGender(gender);
+		String astrosign = a.findSign(user);
 		if(astrosign.equals("Aquarius")){
 			RequestDispatcher rd=this.getServletContext().getRequestDispatcher("/WEB-INF/Outputview.jsp");
 			request.setAttribute("astro", "<img src='./assets/aquarius.svg'>");
@@ -88,6 +99,6 @@ public class AstroFormController extends HttpServlet {
 			RequestDispatcher rd=this.getServletContext().getRequestDispatcher("/WEB-INF/Outputview.jsp");
 			request.setAttribute("astro", "<img src='./assets/virgo.svg'>");
 			rd.forward(request, response);
-		}*/
+		}
 	}
 }
