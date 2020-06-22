@@ -1,9 +1,5 @@
 package testing;
 
-/* Uncomment the below to test code
-import static org.junit.Assert.*;
-import org.junit.Test;
-
 import model.User;
 import service.AstroCalculator;
 
@@ -31,4 +27,3 @@ public class TestAstroCalculator {
 	}
 	
 }
-*/
