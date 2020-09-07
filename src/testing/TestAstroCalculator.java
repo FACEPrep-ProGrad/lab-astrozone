@@ -1,6 +1,5 @@
 package testing;
 
-/* Uncomment the below to test code
 import static org.junit.Assert.*;
 import org.junit.Test;
 
@@ -31,4 +30,4 @@ public class TestAstroCalculator {
 	}
 	
 }
-*/
+
