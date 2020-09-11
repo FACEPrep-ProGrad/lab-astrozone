@@ -1,13 +1,12 @@
 package testing;
 
-/*Uncomment the below code to test
+
 import static org.junit.Assert.*;
 import org.junit.Test;
-
 import model.User;
 
 public class TestUser {
-	User astro = new User("Clara","female","03-11-1997");
+	User astro = new User("Clara","female","03-11-1997", null);
 	@Test
 	public void testGetNameMethod() {
 		astro.setName("Clara");
@@ -27,4 +26,5 @@ public class TestUser {
 		}
 	}
 }
-*/
+
+
