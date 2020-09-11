@@ -1,6 +1,6 @@
 package testing;
 
-/* Uncomment the below to test code
+
 import static org.junit.Assert.*;
 import org.junit.Test;
 
@@ -16,13 +16,13 @@ public class TestAstroCalculator {
 		User astro1 = new User("Clara","female","04-04-1969");
 		assertEquals("Aries",astrocal.findSign(astro1));
 		try {
-			User astro2 = new User(null,null,null);
+		     
 			astrocal.findSign(astro2);
 			User astro3 = new User(null,"female","03-11-1997");
 			astrocal.findSign(astro3);
 			User astro4 = new User("Clara",null,"03-11-1997");
 			astrocal.findSign(astro4);
-			User astro5 = new User("Clara","female",null);
+			User astro5 = new User("Clara","female");
 			astrocal.findSign(astro5);
 		}
 		catch(Exception e) {
@@ -31,4 +31,4 @@ public class TestAstroCalculator {
 	}
 	
 }
-*/
+
