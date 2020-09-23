@@ -11,9 +11,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.User;
-import service.AstroCalculator;
-
 @WebServlet(urlPatterns = {"/astrozone"})
 public class AstroZoneController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -29,6 +26,5 @@ public class AstroZoneController extends HttpServlet {
 			RequestDispatcher rd = this.getServletContext().getRequestDispatcher("/entervalues.jsp");
 			rd.forward(request, response);
 		}
-
 	}
 }
