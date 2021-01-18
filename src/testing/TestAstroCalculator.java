@@ -1,7 +1,9 @@
 package testing;
 
-/* Uncomment the below to test code
-import static org.junit.Assert.*;
+//Uncomment the below to test code
+//import static org.junit.Assert.*;
+//import org.junit.Test;
+import static org.junit.Assert.*;				
 import org.junit.Test;
 
 import model.User;
@@ -9,7 +11,7 @@ import service.AstroCalculator;
 
 public class TestAstroCalculator {	
 	AstroCalculator astrocal = new AstroCalculator();
-	@Test
+	//@Test
 	public void testFindSignMethod() {
 		User astro = new User("Clara", "clara@gmail.com", "03-11-1997", "female");
 		assertEquals("Scorpio",astrocal.findSign(astro));
@@ -33,4 +35,4 @@ public class TestAstroCalculator {
 	}
 	
 }
-*/
+
