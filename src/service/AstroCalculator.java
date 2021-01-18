@@ -1,4 +1,6 @@
 package service;
+import java.time.LocalDate;
+import java.time.Period;
 
 import model.User;
 public class AstroCalculator{
@@ -42,7 +44,23 @@ public class AstroCalculator{
 		//find date and month from date of birth
 		int date=Integer.parseInt(dobArray[0]);
 		int month=Integer.parseInt(dobArray[1]);
+		int year=Integer.parseInt(dobArray[2]);
 		
-		return zodiacSign(date,month);
+		String sign=zodiacSign(date,month);
+		
+		//To find age of user
+		
+		int userAge=0;
+		
+		LocalDate today = LocalDate.now();                   //Today's date
+		LocalDate birthday = LocalDate.of(year,month,date);  //Birth date
+		 
+		Period period = Period.between(birthday, today);
+		
+		userAge=period.getYears();
+		
+		System.out.print("Your Details\nName: "+user.getName()+"\nAge: "
+				+userAge+"\nYour Astrology: "+sign);
+		return sign;
 	}
 }
