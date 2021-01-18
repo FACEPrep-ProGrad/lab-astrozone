@@ -1,7 +1,7 @@
 package testing;
 
-/* Uncomment the below to test code
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Test;
 
 import model.User;
@@ -33,4 +33,4 @@ public class TestAstroCalculator {
 	}
 	
 }
-*/
+
