@@ -1,9 +1,8 @@
 package testing;
 
-/* Uncomment the below to test code
+ 
 import static org.junit.Assert.*;
 import org.junit.Test;
-
 import model.User;
 import service.AstroCalculator;
 
@@ -24,7 +23,7 @@ public class TestAstroCalculator {
 			astrocal.findSign(astro4);
 			User astro5 = new User("Clara","clara@gmail.com", null, "female");
 			astrocal.findSign(astro5);
-                        User astro6 = new User("Clara","clara@gmail.com", "03-11-1997", null);
+            User astro6 = new User("Clara","clara@gmail.com", "03-11-1997", null);
 			astrocal.findSign(astro6);
 		}
 		catch(Exception e) {
@@ -33,4 +32,4 @@ public class TestAstroCalculator {
 	}
 	
 }
-*/
+
