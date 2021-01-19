@@ -1,6 +1,7 @@
 
 package controller;
 
+
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -8,6 +9,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import service.AstroCalculator;
+import model.User;
+import java.time.LocalDate;
+import java.time.Period;
 
 
 @WebServlet(urlPatterns = {"/entervalue"})
@@ -20,7 +25,7 @@ public class AstroFormController extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-/* 
+
 		String name=request.getParameter("name");
 		String gender=request.getParameter("gender");
 		String date=request.getParameter("dob1");
@@ -28,6 +33,21 @@ public class AstroFormController extends HttpServlet {
 		String year=request.getParameter("dob3");
 		String dob = date+"-"+month+"-"+year;	
 		String email = request.getParameter("email");
+		User user=new User(name,email,dob,gender);
+		AstroCalculator ac=new AstroCalculator();
+		String astrosign = ac.findSign(user);
+		
+		
+		LocalDate birth=LocalDate.of(Integer.parseInt(year), Integer.parseInt(month), Integer.parseInt(date));
+		LocalDate today = LocalDate.now();
+		Period p = Period.between(birth, today);
+		int age=p.getYears();
+		System.out.println("Your Details");
+		System.out.println("Name: "+name+".");
+		System.out.println("Age: "+age);
+		System.out.println("Your Astrology: "+astrosign+".");
+		
+	
 		if(astrosign.equals("Aquarius")){
 			RequestDispatcher rd=this.getServletContext().getRequestDispatcher("/WEB-INF/Outputview.jsp");
 			request.setAttribute("astro", "<img src='./assets/aquarius.svg'>");
@@ -88,6 +108,6 @@ public class AstroFormController extends HttpServlet {
 			RequestDispatcher rd=this.getServletContext().getRequestDispatcher("/WEB-INF/Outputview.jsp");
 			request.setAttribute("astro", "<img src='./assets/virgo.svg'>");
 			rd.forward(request, response);
-		}*/
+		}
 	}
 }
